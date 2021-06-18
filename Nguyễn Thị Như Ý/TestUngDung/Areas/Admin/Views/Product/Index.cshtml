@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ModelEF.tblProduct>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    <i class="fa fa-user">Danh sách sản phẩm</i>
+}
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+{
+    <div class="col-lg-12 form-group">
+        <div class="col-md-6">
+            @Html.ActionLink("Tạo mới", "Create", "Product", new { @class = "btn btn-danger" })
+        </div>
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            Mã sản phẩm
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Hình ảnh
+        </th>
+        <th>
+            Đơn giá
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Mã loại sản phẩm
+        </th>
+        <th>
+            Thao tác
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @{ var hinh = Html.DisplayFor(modelItem => item.image); }
+                <img style="width:100px; height:100px " src="~/uploadedImages/@hinh" />
+            </td>
+            <td>
+                @String.Format("{0:0,0 VNĐ}", (item.UnitCost))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.ActionLink(item.idCategoryNo, "Index", "Category", new { id = item.idCategoryNo }, null)
+            </td>
+            <td>
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.ID }) 
+            </td>
+        </tr>
+    }
+
+</table>
+

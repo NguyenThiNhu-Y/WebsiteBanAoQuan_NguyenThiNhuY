@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CompleteBootstrapPlugin</name>
+    </assembly>
+    <members>
+        <member name="T:CompleteBootstrapPlugin.BundleManager">
+            <summary>
+            Bundle Manager
+            </summary>
+        </member>
+        <member name="M:CompleteBootstrapPlugin.BundleManager.JqueryScripts">
+            <summary>
+            Generate an array with path for jQuery
+            </summary>
+            <returns>Array with javascript paths</returns>
+        </member>
+        <member name="M:CompleteBootstrapPlugin.BundleManager.JqueryValScripts">
+            <summary>
+            Generate an array with the path for jQuery Validation plugins
+            </summary>
+            <returns>Array with javascript paths</returns>
+        </member>
+        <member name="M:CompleteBootstrapPlugin.BundleManager.BootstrapScripts">
+            <summary>
+            Generate an array with the path for Bootstrap plugins
+            </summary>
+            <returns>Array with javascript paths</returns>
+        </member>
+        <member name="M:CompleteBootstrapPlugin.BundleManager.DataTableScripts">
+            <summary>
+            Generate an array with the path for DataTable plugins
+            </summary>
+            <returns>Array with javascript paths</returns>
+        </member>
+        <member name="M:CompleteBootstrapPlugin.BundleManager.GenericScripts">
+            <summary>
+            Generate an array with the path for generic plugins
+            </summary>
+            <returns>Array with javascript paths</returns>
+        </member>
+        <member name="M:CompleteBootstrapPlugin.BundleManager.AllCss">
+            <summary>
+            Generate an array with the path for all css files
+            </summary>
+            <returns>Array with css file paths</returns>
+        </member>
+    </members>
+</doc>
